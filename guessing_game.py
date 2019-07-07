@@ -129,14 +129,6 @@ def start_game():
             
         high_score.sort()
         
-        if high_score[0] > guess_count:
-            
-            player = input("Enter your name: ")
-            
-            high_score.insert(0, guess_count)
-            
-            print("Congratulations {}! You have the new high score!".format(player))
-        
         if restart_game() == False:
             
             clear_screen()
