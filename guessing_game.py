@@ -100,6 +100,7 @@ def start_game():
     start = True
     
     # If either statement is true, it loops until correct guess is correct
+    # Sets the high score and displays it to the user at next game play
     while user_congratulated or start:
         
         guess_count = 0
