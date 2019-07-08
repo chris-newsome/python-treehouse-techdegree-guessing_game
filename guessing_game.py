@@ -115,7 +115,7 @@ def start_game():
         
         message = guess_game(guess, secret_number)
         
-        while message != "You got it!":
+        while guess != secret_number:
             
             print(message)
             
