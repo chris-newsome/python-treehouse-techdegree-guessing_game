@@ -36,7 +36,7 @@ def generate_secret_number():
     return secret_number
 
 # Function that asks the user to pick a number
-def ask_user_input(message = "Pick a number: "):
+def ask_user_input(message = "\nPick a number: "):
     
     while True:
         
@@ -61,7 +61,7 @@ def guess_game(guess, secret_number):
     
     elif 10 >= guess > secret_number:
         
-        return "\n Too high! The number is less than " + str(guess)
+        return "\nToo high! The number is less than " + str(guess)
     
     elif guess > 10:
         
