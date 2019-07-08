@@ -4,10 +4,12 @@ import os
     
 high_score = []
 
+# Function to clear the screen when the user wants to play again
 def clear_screen():
     
     os.system("cls" if os.name == "nt" else "clear")
-    
+
+# Function to display a welcome message for the game    
 def welcome_message():
     
     print("""
@@ -15,6 +17,8 @@ def welcome_message():
     Welcome to the Number Guessing Game!
     ====================================
     
+    Developed by: Christopher Newsome
+
     Here are the rules:
     
     Choose a number between 1 and 10.
@@ -23,20 +27,15 @@ def welcome_message():
     
     Have fun!
     """)
-    
+
+# Function that stores a random number between 1 and 10   
 def generate_secret_number():
     
-    # Stores random number
     secret_number = random.randint(1, 10)
     
     return secret_number
 
-def username():
-    
-    player = input("Enter your name: ")
-    
-    return player
-
+# Function that asks the user to pick a number
 def ask_user_input(message = "Pick a number: "):
     
     while True:
@@ -53,6 +52,7 @@ def ask_user_input(message = "Pick a number: "):
             
             continue
 
+# Function that loops through guesses until guessed correctly
 def guess_game(guess, secret_number):
     
     if 1 <= guess < secret_number:
@@ -74,7 +74,8 @@ def guess_game(guess, secret_number):
     elif secret_number == guess:
         
         return "You got it!"
-    
+
+# Function that asks if the user would like to play again    
 def restart_game():
     
     restart = (input("\nWould you like to play again? [y]es or [n]o? "))
@@ -89,12 +90,16 @@ def restart_game():
         
         return False
 
+# Function that starts the game
 def start_game():
     
+    # Variable set to False at start of game
     user_congratulated = False
-        
+
+    # Variable allows the game to begin    
     start = True
     
+    # If either statement is true, it loops until correct guess is correct
     while user_congratulated or start:
         
         guess_count = 0
@@ -102,8 +107,6 @@ def start_game():
         welcome_message()
                       
         secret_number = generate_secret_number()
-        
-        print("For testing purposes, the secret number is {}\n".format(secret_number))
         
         guess = ask_user_input()
         
@@ -133,13 +136,11 @@ def start_game():
             
             clear_screen()
                 
-            print("\n      **The current high score is {}**".format(high_score[0]))
+            print("\n    *** The current high score is {} ***".format(high_score[0]))
             
             start_game()
         
         user_congratulated = True
 
 if __name__ == '__main__':
-    print ("    ")  
-    print ("Developed by: Christopher Newsome")   
     start_game()
