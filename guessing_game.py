@@ -1,10 +1,11 @@
 import random
 
 import os
-    
+
+# Variable for high score set to empty list
 high_score = []
 
-# Function to clear the screen when the user wants to play again
+# Function that uses the OS module to clear the screen when the user wants to play again
 def clear_screen():
     
     os.system("cls" if os.name == "nt" else "clear")
@@ -102,7 +103,7 @@ def start_game():
     # If either statement is true, it loops until correct guess is correct
     # Sets the high score and displays it to the user at next game play
     while user_congratulated or start:
-        
+
         guess_count = 0
         
         welcome_message()
