@@ -138,7 +138,7 @@ def start_game():
             
             clear_screen()
                 
-            print("\n    *** The current high score is {} ***".format(high_score[0]))
+            print(f"\n    *** The current high score is {high_score[0]} ***")
             
             start_game()
         
