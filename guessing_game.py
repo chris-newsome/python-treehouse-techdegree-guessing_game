@@ -128,7 +128,7 @@ def start_game():
         
         print()
         
-        print(message, "You guessed the secret number in {} try(s)!".format(guess_count))
+        print(message, f"You guessed the secret number in {guess_count} try(s)!")
         
         high_score.append(guess_count)
             
