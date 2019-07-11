@@ -74,16 +74,22 @@ def guess_game(guess, secret_number):
   
 def restart_game():
     """Function that asks if the user would like to play again"""
-    
+
     restart = (input("\nWould you like to play again? [y]es or [n]o? "))
     
+    while restart.lower() != 'y' and restart.lower() != 'n':
+
+        print("\nInvalid input. Please try again.")
+
+        restart = input("\nWould you like to play again? (y/n) ")
+        
     if restart.lower().strip() == "n":
         
         print("\nThank you for playing! Hope to see you again soon!")
         
         exit()
         
-    if restart.lower().strip() == "y":
+    elif restart.lower().strip() == "y":
         
         return False
 
@@ -97,7 +103,6 @@ def start_game():
     start = True
     
     # If either statement is true, it loops until correct guess is correct
-    # Sets the high score and displays it to the user at next game play
     while user_congratulated or start:
 
         guess_count = 0
@@ -126,19 +131,20 @@ def start_game():
         
         print(message, f"You guessed the secret number in {guess_count} try(s)!")
         
+        # Sets the high score and displays it to the user at next game play
         high_score.append(guess_count)
             
         high_score.sort()
-        
+
         if restart_game() == False:
-            
+
             clear_screen()
                 
             print(f"\n    *** The current high score is {high_score[0]} ***")
             
             start_game()
-        
-        user_congratulated = True
+            
+            user_congratulated = True
 
 if __name__ == '__main__':
     start_game()
