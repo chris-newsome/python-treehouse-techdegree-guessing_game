@@ -63,13 +63,9 @@ def guess_game(guess, secret_number):
     elif 10 >= guess > secret_number:
         
         return "\nToo high! The number is less than " + str(guess)
-    
-    elif guess > 10:
-        
-        return str(guess) + " is not correct. The number must be between 1 and 10."
-    
-    elif guess < 1:
-        
+
+    elif guess < 1 or guess > 10:
+
         return str(guess) + " is not correct. The number must be between 1 and 10."
     
     elif secret_number == guess:
