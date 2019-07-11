@@ -5,13 +5,13 @@ import os
 # Variable for high score set to empty list
 high_score = []
 
-# Function that uses the OS module to clear the screen when the user wants to play again
 def clear_screen():
+    """Function that uses the OS module to clear the screen when the user wants to play again"""
     
     os.system("cls" if os.name == "nt" else "clear")
-
-# Function to display a welcome message for the game    
+ 
 def welcome_message():
+    """Function to display a welcome message for the game"""
     
     print("""
     ====================================
@@ -28,16 +28,16 @@ def welcome_message():
     
     Have fun!
     """)
-
-# Function that stores a random number between 1 and 10   
+ 
 def generate_secret_number():
+    """Function that stores a random number between 1 and 10"""
     
     secret_number = random.randint(1, 10)
     
     return secret_number
 
-# Function that asks the user to pick a number
 def ask_user_input(message = "\nPick a number: "):
+    """Function that asks the user to pick a number"""
     
     while True:
         
@@ -53,8 +53,8 @@ def ask_user_input(message = "\nPick a number: "):
             
             continue
 
-# Function that loops through guesses until guessed correctly
 def guess_game(guess, secret_number):
+    """Function that loops through guesses until guessed correctly"""
     
     if 1 <= guess < secret_number:
         
@@ -75,9 +75,9 @@ def guess_game(guess, secret_number):
     elif secret_number == guess:
         
         return "You got it!"
-
-# Function that asks if the user would like to play again    
+  
 def restart_game():
+    """Function that asks if the user would like to play again"""
     
     restart = (input("\nWould you like to play again? [y]es or [n]o? "))
     
@@ -91,8 +91,8 @@ def restart_game():
         
         return False
 
-# Function that starts the game
 def start_game():
+    """Function that starts the game"""
     
     # Variable set to False at start of game
     user_congratulated = False
